@@ -17,6 +17,7 @@ export default function LoginPage() {
   return (
     <>
       <h1>Bienvenue chez nous !</h1>
+      <br />
       <h2>Connectez-vous</h2>
       <form onSubmit={ handleSubmit }>
       <input type="text" placeholder="Entrez votre prénom..." required value={ text } onChange={ handleChange }></input>
