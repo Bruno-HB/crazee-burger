@@ -4,4 +4,5 @@ export default function LoginPage() {
 
   // affichage 
   return <LoginForm />
+  
 }
