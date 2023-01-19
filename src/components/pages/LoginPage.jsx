@@ -2,12 +2,10 @@ import { useState } from "react";
 
 export default function LoginPage() {
     // state
-    const [name, setName] = useState("")
     const [text, setText] = useState("")
   // comportements
     const handleSubmit = (e) => {
       e.preventDefault();
-      setName(text)
       alert(`Bonjour ${text}`)
       setText("")
     }
