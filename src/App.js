@@ -9,6 +9,7 @@ function App() {
       e.preventDefault();
       setName(text)
       alert(`Bonjour ${text}`)
+      setText("")
     }
 
     const handleChange = (e) => {
