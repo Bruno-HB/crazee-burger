@@ -1,5 +1,9 @@
-import { useState } from "react";
 import LoginPage from "./components/pages/login/LoginPage";
+import {Routes, Route} from "react-router-dom";
+import OrderPage from "./components/pages/order/OrderPage";
+
+
+
 
 function App() {
   // state
@@ -8,6 +12,12 @@ function App() {
 
   // affichage 
 
-  return <LoginPage />
+  return (
+    <Routes>
+      <Route path="/" element={<LoginPage />}/>
+      <Route path="/order/:username" element={<OrderPage />} />
+    </Routes>
+  )
+
 }
 export default App;
