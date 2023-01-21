@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 export default function ErrorPage() {
     //state
     const navigate = useNavigate()
+    
     //comportements
     const handleClick = () => { 
         navigate('/')
