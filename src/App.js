@@ -5,7 +5,6 @@ import ErrorPage from "./components/pages/error/ErrorPage";
 import styled from "styled-components";
 
 
-
 function App() {
   // state
 
