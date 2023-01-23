@@ -9,6 +9,7 @@ export default function Logo() {
 }
 
 const LogoStyled = styled.div`
+user-select: none;
 font-family: 'Amatic SC';
 font-weight: ${theme.weights.bold};
 color: ${theme.colors.primary};
