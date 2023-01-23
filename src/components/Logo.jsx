@@ -17,6 +17,6 @@ display: flex;
 justify-content: center;
 align-items: center;
 img {
-    max-width: 15%;
+    max-width: 15%; 
 }
 `;
