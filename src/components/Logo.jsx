@@ -4,11 +4,13 @@ import { theme } from '../theme';
 
 export default function Logo() {
   return (
-    <LogoStyled>CRAZEE <img src='/F03 logo-orange.png' alt="Logo of Crazee Burger" /> BURGER</LogoStyled>
+    <LogoStyled>CRAZEE  <img src='/F03 logo-orange.png' alt="Logo of Crazee Burger" />  BURGER</LogoStyled>
   )
 }
 
 const LogoStyled = styled.div`
+scale: 1.7;
+margin-bottom: 39.7px;
 user-select: none;
 font-family: 'Amatic SC';
 font-weight: ${theme.weights.bold};

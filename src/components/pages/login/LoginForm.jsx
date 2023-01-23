@@ -52,43 +52,54 @@ flex-direction: column;
 color: ${theme.colors.white};
 text-transform: uppercase;
 h1{
-    margin-top: 0;
+    margin-top: 39.7px 0 32.16px 0;
     font-size: ${theme.fonts.P5};
   }
 hr{
+    margin: 0 0 40px 0;
     width: 400px;
     border: 2px solid ${theme.colors.line_separator};
 }
 h2{
     font-size: ${theme.fonts.P4};
+    margin: 0  0 18px 0;
 }
 
 .input, .buttonStyle {
     width: 400px;
     font-family: 'Open Sans', sans-serif;
-    height: ${theme.spacing.xl};
+    height: 55px;
     border-radius: ${theme.borderRadius.round};
     background-color: ${theme.colors.background_white};
-    margin-bottom: ${theme.spacing.sm};
     font-size: ${theme.fonts.P3};
 }
 
 .input{
+    position: relative;
+    margin-bottom: 18px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .icon {
+    position: absolute;
+    left: 24px;
+    top: 18px;
+    bottom: 43.75%;
     width: ${theme.fonts.P0};
     color: ${theme.colors.greyDark};
     margin-right: ${theme.spacing.sm};
 }
 input { 
+    position: absolute;
+    left: 53.8px;
+    top: 18px;
+    bottom: 43.75%;
     border: none;
     background-color: ${theme.colors.background_white};
     border-radius: ${theme.borderRadius.round};
     height: 35%;
-    width: 70%;
+    width: 320.2px;
 }
 
 input:focus {
