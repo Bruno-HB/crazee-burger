@@ -111,6 +111,11 @@ button {
     width: 100%;
     font-size: ${theme.fonts.P1};
     font-weight: ${theme.weights.bold};
+    color: ${theme.colors.background_white};
+    background-color: ${theme.colors.primary_burger};
+}
+
+button:hover, button:active {
     color: ${theme.colors.primary_burger};
     background-color: ${theme.colors.background_white};
 }
