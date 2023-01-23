@@ -14,11 +14,13 @@ function App() {
 
   return (
     <AppStyled>
+    <div className="background">
     <Routes>
       <Route path="/" element={<LoginPage />}/>
       <Route path="/order/:username" element={<OrderPage />} />
       <Route path="/*" element={<ErrorPage/>} />
     </Routes>
+    </div>
     </AppStyled>
   )
 
@@ -26,7 +28,12 @@ function App() {
 export default App;
 
 const AppStyled = styled.div`
-  background-image: url("/F03 burger-background.jpg");
+  background: url("/F03 burger-background.jpg");
   background-size: cover;
   height: 100vh;
+  .background {
+    background-color: rgba(0,0,0,0.5);
+    height: 100%;
+    width: 100%;
+  }
 `;
