@@ -28,8 +28,7 @@ export default function LoginForm() {
         <LoginFormStyled onSubmit={ handleSubmit }>
             <Logo />
             <h1>Bienvenue chez nous !</h1>
-            <br/>
-            <div className="line"></div>
+            <hr/>
             <h2>Connectez-vous</h2>
             <div className="input">
                 <BsPersonCircle className="icon"/>
@@ -56,15 +55,16 @@ h1{
     margin-top: 0;
     font-size: ${theme.fonts.P5};
   }
-  .line{
-    width: 35%;
-    border: 2px solid ${theme.colors.primary};
+hr{
+    width: 400px;
+    border: 2px solid ${theme.colors.line_separator};
 }
 h2{
     font-size: ${theme.fonts.P4};
 }
 
 .input, .buttonStyle {
+    width: 400px;
     font-family: 'Open Sans', sans-serif;
     height: ${theme.spacing.xl};
     border-radius: ${theme.borderRadius.round};
@@ -77,9 +77,9 @@ h2{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 35%;
 }
 .icon {
+    width: ${theme.fonts.P0};
     color: ${theme.colors.greyDark};
     margin-right: ${theme.spacing.sm};
 }
@@ -93,12 +93,12 @@ input {
 
 input:focus {
     outline: none;
-    border: 2px solid ${theme.colors.blue};
+    border: 1px solid ${theme.colors.blue};
 }
 
 .buttonStyle {
     border: 1px solid ${theme.colors.primary};
-    width: 35%;
+    width: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
