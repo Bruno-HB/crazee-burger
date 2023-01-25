@@ -9,7 +9,7 @@ export default function LoginForm() {
     // comportements
         const handleSubmit = (e) => {
             e.preventDefault();
-            navigate(`/order/${username}`, {state: {username}})
+            navigate(`/order/${username}`)
             setUsername("")
         }
 
