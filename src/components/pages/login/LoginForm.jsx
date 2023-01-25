@@ -30,8 +30,8 @@ export default function LoginForm() {
             <h1>Bienvenue chez nous !</h1>
             <hr/>
             <h2>Connectez-vous</h2>
-            <Input value={ username } onChange={ handleChange } type="text" placeholder="Entrez votre prénom" Icon={<BsPersonCircle className="icon" />}/>
-            <Button label="Accéder à mon espace" Icon={<IoChevronForward className="icon" />}/>
+            <Input value={ username } onChange={ handleChange } type="text" placeholder="Entrez votre prénom" Icon={<BsPersonCircle className="icon" />} required/>
+            <Button label="Accéder à mon espace" Icon={<IoChevronForward className="icon" />} />
         </LoginFormStyled> 
     )
 }
@@ -42,7 +42,7 @@ const LoginFormStyled = styled.form`
   max-width: 500px;
   min-width: 400px;
   margin: 0 auto;
-  padding: 2.5rem ${theme.spacing.lg};
+  padding: 40px ${theme.spacing.lg};
   border-radius: ${theme.borderRadius.round};
   font-family: "Amatic SC", cursive;
 
