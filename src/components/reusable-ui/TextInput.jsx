@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-export default function Input({value, onChange, Icon, ...otherProps}) {
+export default function TextInput({value, onChange, Icon, ...otherProps}) {
   return (
-    <InputSyled>
+    <TextInputSyled>
         {Icon && Icon}
         <input 
         value={ value }
@@ -10,11 +10,11 @@ export default function Input({value, onChange, Icon, ...otherProps}) {
         type="text"
         {...otherProps}
         />
-    </InputSyled>
+    </TextInputSyled>
   )
 }
  
-const InputSyled = styled.div`
+const TextInputSyled = styled.div`
     background-color: #fff;
     border-radius: 5px;
     display: flex;
