@@ -1,10 +1,9 @@
 import styled from "styled-components";
 import { theme } from "../../theme";
-import { refreshPage } from "../../utils/window";
 
-export default function Logo() {
+export default function Logo({ onClick }) {
   return (
-    <LogoStyled className="logo" onClick={refreshPage}>
+    <LogoStyled className="logo" onClick={onClick}>
       <h1>Crazee</h1>
       <img src="/images/logo-orange.png" alt="Logo Crazee Burger" />
       <h1>Burger</h1>
@@ -12,7 +11,6 @@ export default function Logo() {
   );
 }
 const LogoStyled = styled.div`
-  cursor: pointer;
   display: flex;
   align-items: center;
   user-select: none;
