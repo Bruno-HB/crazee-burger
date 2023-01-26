@@ -4,7 +4,7 @@ import { theme } from '../../theme';
 
 export default function Logo() {
   return (
-    <LogoStyled>
+    <LogoStyled className="logo">
         <h1>Crazee</h1> 
         <img src="/images/logo-orange.png" alt="Logo Crazee Burger" />
         <h1>Burger</h1>
@@ -14,7 +14,7 @@ export default function Logo() {
 const LogoStyled = styled.div`
   display: flex;
   align-items: center;
-  transform: scale(2.5);
+  /* transform: scale(2.5); */
   user-select: none;
 
   h1 {
