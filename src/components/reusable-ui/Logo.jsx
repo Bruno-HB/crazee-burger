@@ -1,18 +1,15 @@
-import styled from 'styled-components';
-import { theme } from '../../theme';
+import styled from "styled-components";
+import { theme } from "../../theme";
+import { refreshPage } from "../../utils/window";
 
 export default function Logo() {
-  const handleClick = () => { 
-    window.location.reload()
-}
-
   return (
-    <LogoStyled className="logo" onClick={handleClick}>
-        <h1>Crazee</h1> 
-        <img src="/images/logo-orange.png" alt="Logo Crazee Burger" />
-        <h1>Burger</h1>
+    <LogoStyled className="logo" onClick={refreshPage}>
+      <h1>Crazee</h1>
+      <img src="/images/logo-orange.png" alt="Logo Crazee Burger" />
+      <h1>Burger</h1>
     </LogoStyled>
-  )
+  );
 }
 const LogoStyled = styled.div`
   cursor: pointer;
@@ -29,7 +26,7 @@ const LogoStyled = styled.div`
     font-weight: ${theme.fonts.weights.bold};
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    font-family: 'Amatic SC', cursive;
+    font-family: "Amatic SC", cursive;
   }
 
   img {

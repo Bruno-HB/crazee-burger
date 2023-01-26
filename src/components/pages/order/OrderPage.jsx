@@ -1,18 +1,19 @@
-import { useParams } from 'react-router-dom'
-import styled from 'styled-components';
-import Navbar from '../../reusable-ui/Navbar';
+import { useParams } from "react-router-dom";
+import styled from "styled-components";
+import { theme } from "../../../theme";
+import Navbar from "./Navbar";
 
 export default function OrderPage() {
-    //state
-    const {username} = useParams();
+  //state
+  const { username } = useParams();
 
-    //affichage
+  //affichage
   return (
     <OrderPageStyled>
-        <Navbar username={username}/>
-        <div className="main"></div>
+      <Navbar username={username} />
+      <div className="main"></div>
     </OrderPageStyled>
-  )
+  );
 }
 
 const OrderPageStyled = styled.div`
@@ -20,13 +21,14 @@ const OrderPageStyled = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: orange;
+  background-color: ${theme.colors.primary};
   height: 100vh;
-  .main{
+
+  .main {
     min-width: 1400px;
     height: 85vh;
-    background-color: #fff;
-    box-shadow: 0px 8px 20px 8px rgba(0, 0, 0, 0.2) inset ;
+    background-color: ${theme.colors.white};
+    box-shadow: 0px 8px 20px 8px rgba(0, 0, 0, 0.2) inset;
     border-radius: 0px 0px 15px 15px;
   }
 `;
