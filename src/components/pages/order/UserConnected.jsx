@@ -12,6 +12,7 @@ export default function UserConnected({ username }) {
         </span>
         <Link to="/" className="link-to-disconnect">
           Se déconnecter
+          <hr />
         </Link>
       </div>
       <BsPersonCircle className="icon" />
@@ -36,6 +37,7 @@ const UserConnectedStyled = styled.div`
   }
 
   .user-disconnect {
+    margin-top: ${theme.spacing.xxs};
     padding-right: ${theme.spacing.sm};
     display: flex;
     flex-direction: column;
@@ -44,7 +46,19 @@ const UserConnectedStyled = styled.div`
 
   .link-to-disconnect {
     text-decoration: none;
+    margin-top: 3px;
     color: ${theme.colors.greyBlue};
     font-size: ${theme.fonts.size.XXS};
+
+    hr {
+      opacity: 0;
+      color: ${theme.colors.greyBlue};
+    }
+
+    &:hover {
+      hr {
+        opacity: 1;
+      }
+    }
   }
 `;
