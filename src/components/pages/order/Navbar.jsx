@@ -7,7 +7,7 @@ import { refreshPage } from "../../../utils/window";
 export default function Navbar({ username }) {
   return (
     <NavbarStyled>
-      <Logo className="logo" onClick={refreshPage} />
+      <Logo className="logo-navbar" onClick={refreshPage} />
       <UserConnected username={username} />
     </NavbarStyled>
   );
@@ -22,7 +22,7 @@ const NavbarStyled = styled.div`
   border-radius: 15px 15px 0px 0px;
   justify-content: space-between;
 
-  .logo {
+  .logo-navbar {
     cursor: pointer;
     padding-left: ${theme.spacing.md};
   }
