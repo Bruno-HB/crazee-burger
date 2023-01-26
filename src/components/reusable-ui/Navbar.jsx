@@ -5,9 +5,10 @@ import { BsPersonCircle } from "react-icons/bs"
 import UserConnected from "./UserConnected";
 
 export default function Navbar({username }) {
+
   return (
     <NavbarStyled>
-        <Logo className="logo"/>
+        <Logo className="logo" />
         <UserConnected username={username} Icon={<BsPersonCircle className="icon" />}/>
     </NavbarStyled>
   )

@@ -5,19 +5,12 @@ import Navbar from '../../reusable-ui/Navbar';
 export default function OrderPage() {
     //state
     const {username} = useParams();
-    // const navigate = useNavigate();
-    //comportements
-    // const handleClick = () => { 
-    //     navigate('/')
-    //  }
 
     //affichage
   return (
     <OrderPageStyled>
         <Navbar username={username}/>
         <div className="main"></div>
-        {/* <h1>Bonjour {username}</h1>
-        <button onClick={handleClick}>Déconnexion</button> */}
     </OrderPageStyled>
   )
 }
