@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { theme } from "../../theme";
 
-export default function PrimaryButton({label, Icon}) {
+export default function PrimaryButton({ label, Icon }) {
   return (
     <PrimaryButtonStyled>
       <span>{label}</span>

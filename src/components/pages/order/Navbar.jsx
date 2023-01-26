@@ -21,6 +21,7 @@ const NavbarStyled = styled.div`
   background: ${theme.colors.white};
   border-radius: 15px 15px 0px 0px;
   justify-content: space-between;
+
   .logo {
     cursor: pointer;
     padding-left: ${theme.spacing.md};

@@ -3,15 +3,13 @@ import Logo from "../../reusable-ui/Logo";
 import LoginForm from "./LoginForm";
 
 export default function LoginPage() {
-
-  // affichage 
+  // affichage
   return (
     <LoginPageStyled>
-      <Logo className="logo"/>
-      <LoginForm /> 
+      <Logo className="logo" />
+      <LoginForm />
     </LoginPageStyled>
-  )
-  
+  );
 }
 
 const LoginPageStyled = styled.div`
@@ -20,10 +18,10 @@ const LoginPageStyled = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
+
   ::before {
     content: "";
-    background: url('/images/burger-background.jpg') rgba(0,0,0,0.7);
+    background: url("/images/burger-background.jpg") rgba(0, 0, 0, 0.7);
     background-size: cover;
     background-position: center;
     background-blend-mode: darken;
@@ -38,5 +36,4 @@ const LoginPageStyled = styled.div`
   .logo {
     transform: scale(2.5);
   }
-
 `;
