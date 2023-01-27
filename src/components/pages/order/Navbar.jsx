@@ -24,6 +24,6 @@ const NavbarStyled = styled.nav`
 
   .logo-navbar {
     cursor: pointer;
-    padding-left: ${theme.spacing.md};
+    margin-left: ${theme.spacing.md};
   }
 `;
