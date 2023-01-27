@@ -11,8 +11,10 @@ export default function OrderPage() {
   //affichage
   return (
     <OrderPageStyled>
-      <Navbar username={username} />
-      <Main />
+      <div className="container">
+        <Navbar username={username} />
+        <Main />
+      </div>
     </OrderPageStyled>
   );
 }
@@ -21,7 +23,13 @@ const OrderPageStyled = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   background-color: ${theme.colors.primary};
   height: 100vh;
+
+  .container {
+    height: 95vh;
+    width: 1400px;
+    display: flex;
+    flex-direction: column;
+  }
 `;
