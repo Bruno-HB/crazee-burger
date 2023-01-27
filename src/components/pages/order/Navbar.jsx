@@ -13,7 +13,7 @@ export default function Navbar({ username }) {
   );
 }
 
-const NavbarStyled = styled.div`
+const NavbarStyled = styled.nav`
   font-family: "Open Sans", sans-serif;
   display: flex;
   max-width: 1400px;
