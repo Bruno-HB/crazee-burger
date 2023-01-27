@@ -14,7 +14,6 @@ export default function Navbar({ username }) {
 }
 
 const NavbarStyled = styled.nav`
-  font-family: "Open Sans", sans-serif;
   display: flex;
   min-width: 1400px;
   background: ${theme.colors.white};
