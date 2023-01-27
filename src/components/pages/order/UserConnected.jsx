@@ -28,7 +28,7 @@ const UserConnectedStyled = styled.div`
   .icon {
     height: ${theme.fonts.size.P4};
     width: ${theme.fonts.size.P4};
-    padding-right: 70px;
+    padding-right: 50px;
   }
 
   .username {

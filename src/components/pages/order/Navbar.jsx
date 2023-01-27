@@ -16,14 +16,13 @@ export default function Navbar({ username }) {
 const NavbarStyled = styled.nav`
   font-family: "Open Sans", sans-serif;
   display: flex;
-  max-width: 1400px;
-  width: 100%;
+  min-width: 1400px;
   background: ${theme.colors.white};
   border-radius: 15px 15px 0px 0px;
   justify-content: space-between;
+  padding: 0 ${theme.spacing.md};
 
   .logo-navbar {
     cursor: pointer;
-    margin-left: ${theme.spacing.md};
   }
 `;
