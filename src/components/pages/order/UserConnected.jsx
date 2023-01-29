@@ -52,7 +52,7 @@ const UserConnectedStyled = styled.div`
 
     hr {
       opacity: 0;
-      border: 1px solid ${theme.colors.greyLight};
+      border: 1px solid ${theme.colors.greyDark};
     }
 
     &:hover {
