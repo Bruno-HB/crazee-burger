@@ -15,7 +15,7 @@ export default function Navbar({ username }) {
 
 const NavbarStyled = styled.nav`
   display: flex;
-  min-width: 1400px;
+  max-width: 1400px;
   background: ${theme.colors.white};
   border-radius: 15px 15px 0px 0px;
   justify-content: space-between;
