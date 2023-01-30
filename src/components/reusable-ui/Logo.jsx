@@ -1,20 +1,18 @@
-import React from 'react'
-import styled from 'styled-components';
-import { theme } from '../../theme';
+import styled from "styled-components";
+import { theme } from "../../theme";
 
-export default function Logo() {
+export default function Logo({ className, onClick }) {
   return (
-    <LogoStyled>
-        <h1>Crazee</h1> 
-        <img src="/images/logo-orange.png" alt="Logo Crazee Burger" />
-        <h1>Burger</h1>
+    <LogoStyled className={className} onClick={onClick}>
+      <h1>Crazee</h1>
+      <img src="/images/logo-orange.png" alt="Logo Crazee Burger" />
+      <h1>Burger</h1>
     </LogoStyled>
-  )
+  );
 }
 const LogoStyled = styled.div`
   display: flex;
   align-items: center;
-  transform: scale(2.5);
   user-select: none;
 
   h1 {
@@ -26,7 +24,7 @@ const LogoStyled = styled.div`
     font-weight: ${theme.fonts.weights.bold};
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    font-family: 'Amatic SC', cursive;
+    font-family: "Amatic SC", cursive;
   }
 
   img {
