@@ -14,8 +14,15 @@ export default function Main() {
 }
 
 const MainStyled = styled.div`
-  width: 1400px;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px 60px;
+  overflow: scroll;
   height: 88vh;
+  padding: 50px 92.5px;
   background-color: ${theme.colors.white};
   box-shadow: 0px 8px 20px 8px rgba(0, 0, 0, 0.2) inset;
   border-radius: 0px 0px 15px 15px;
