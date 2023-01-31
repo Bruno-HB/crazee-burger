@@ -1,8 +1,16 @@
 import styled from "styled-components";
 import { theme } from "../../../theme";
+import Card from "../../reusable-ui/Card";
+import { fakeMenu1, fakeMenu2 } from "../../../fakeData/fakeMenu";
 
 export default function Main() {
-  return <MainStyled></MainStyled>;
+  return (
+    <MainStyled>
+      {fakeMenu2.map((e) => (
+        <Card id={e.id} image={e.imageSource} title={e.title} price={e.price} />
+      ))}
+    </MainStyled>
+  );
 }
 
 const MainStyled = styled.div`
