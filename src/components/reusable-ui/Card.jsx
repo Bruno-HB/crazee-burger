@@ -37,8 +37,9 @@ const CardStyled = styled.div`
     .imgbox {
       width: 200px;
       max-height: 145px;
+      text-align: center;
       img {
-        width: 100%;
+        max-width: 100%;
         max-height: 100%;
       }
     }
