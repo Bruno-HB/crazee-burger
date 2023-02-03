@@ -36,7 +36,7 @@ const CardStyled = styled.div`
     width: 100%;
     height: auto;
     margin-top: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 
     img {
       width: 100%;
@@ -85,7 +85,7 @@ const CardStyled = styled.div`
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        font-size: ${theme.fonts.size.P1};
+        font-size: ${theme.fonts.size.XS};
 
         .button {
           font-size: ${theme.fonts.size.XS};
