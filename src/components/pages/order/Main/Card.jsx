@@ -22,19 +22,24 @@ export default function Card({ image, title, id, price }) {
 
 const CardStyled = styled.div`
   box-shadow: -8px 8px 20px 0px rgb(0 0 0 / 20%);
-  width: 240px;
-  height: 330px;
+  width: 200px;
+  height: 300px;
   border-radius: ${theme.borderRadius.extraRound};
   background-color: red;
+  display: grid;
+  grid-template-rows: 65% 1fr;
+  padding: 20px;
+  padding-bottom: 10px;
 
   .imgbox {
-    width: 200px;
-    max-height: 145px;
-    text-align: center;
     border: 1px solid fuchsia;
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
     img {
-      max-width: 100%;
-      max-height: 100%;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
   }
   .description {
