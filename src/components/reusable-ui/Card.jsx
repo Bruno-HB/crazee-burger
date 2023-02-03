@@ -91,12 +91,6 @@ const CardStyled = styled.div`
           font-size: ${theme.fonts.size.XS};
           cursor: pointer;
           padding: 12px;
-
-          /* &:active {
-            color: ${theme.colors.white};
-            background-color: ${theme.colors.primary};
-            border: 1px solid ${theme.colors.primary};
-          } */
         }
       }
     }
