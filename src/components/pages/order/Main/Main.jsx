@@ -2,21 +2,13 @@ import styled from "styled-components";
 import { theme } from "../../../../theme";
 import Card from "../../../reusable-ui/Card";
 import { fakeMenu2 } from "../../../../fakeData/fakeMenu";
+import Menu from "./Menu";
 
 export default function Main() {
   return (
     <MainStyled>
       <div className="basket">basket</div>
-      <div className="menu">
-        {fakeMenu2.map((e) => (
-          <Card
-            id={e.id}
-            image={e.imageSource}
-            title={e.title}
-            price={e.price}
-          />
-        ))}
-      </div>
+      <Menu />
     </MainStyled>
   );
 }
