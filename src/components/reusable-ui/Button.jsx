@@ -29,21 +29,21 @@ const PrimaryButtonStyled = styled.button`
   background-color: ${theme.colors.primary};
   border: 1px solid ${theme.colors.primary};
 
-  &:hover:not(:disabled) {
+  &:hover {
     background-color: ${theme.colors.white};
     color: ${theme.colors.primary};
     border: 1px solid ${theme.colors.primary};
     transition: all 200ms ease-out;
   }
 
-  &:active {
-    color: ${theme.colors.white};
-    background-color: ${theme.colors.primary};
-    border: 1px solid ${theme.colors.primary};
-  }
-
   &:disabled {
     opacity: 0.6;
     cursor: not-allowed;
+  }
+
+  &:active {
+    color: ${theme.colors.white};
+    background-color: ${theme.colors.red};
+    border: 1px solid ${theme.colors.primary};
   }
 `;
