@@ -17,9 +17,11 @@ const NavbarStyled = styled.nav`
   display: flex;
   max-width: 1400px;
   background: ${theme.colors.white};
-  border-radius: 15px 15px 0px 0px;
+  border-radius: ${theme.borderRadius.extraRound}
+    ${theme.borderRadius.extraRound} 0px 0px;
   justify-content: space-between;
   padding: 0 ${theme.spacing.md};
+  border-bottom: 1px solid ${theme.colors.greyLight};
 
   .logo-navbar {
     cursor: pointer;
