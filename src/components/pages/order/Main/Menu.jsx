@@ -8,6 +8,7 @@ export default function Menu() {
   //state
   const [menu, setMenu] = useState(fakeMenu2);
 
+  //affichage
   return (
     <MenuStyled>
       {menu.map((e) => (
