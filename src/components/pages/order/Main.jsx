@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { theme } from "../../../theme";
 import Card from "../../reusable-ui/Card";
-import { fakeMenu1, fakeMenu2 } from "../../../fakeData/fakeMenu";
+import { fakeMenu2 } from "../../../fakeData/fakeMenu";
 
 export default function Main() {
   return (
@@ -17,9 +17,10 @@ const MainStyled = styled.div`
   &::-webkit-scrollbar {
     display: none;
   }
-  display: flex;
-  flex-wrap: wrap;
-  gap: 50px 60px;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  /* flex-wrap: wrap; */
+  /* gap: 50px 60px; */
   overflow: scroll;
   height: 88vh;
   padding: 50px 92.5px;
