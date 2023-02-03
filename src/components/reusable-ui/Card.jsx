@@ -24,9 +24,10 @@ const CardStyled = styled.div`
   /* display: flex;: */
   /* justify-content: space-between; */
   box-shadow: -8px 8px 20px 0px rgb(0 0 0 / 20%); /* background-color: red; */
-  max-width: 240px;
+  width: 240px;
   height: 330px;
   border-radius: ${theme.borderRadius.extraRound};
+  background-color: red;
   .container-card {
     padding: 50px 20px;
     width: 100%;
