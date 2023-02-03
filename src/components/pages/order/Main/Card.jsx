@@ -1,15 +1,15 @@
 import styled from "styled-components";
-import { theme } from "../../theme";
-import { formatPrice } from "../../utils/maths";
-import Button from "./Button";
+import { theme } from "../../../../theme";
+import { formatPrice } from "../../../../utils/maths";
+import Button from "../../../reusable-ui/Button";
 
 export default function Card({ image, title, id, price }) {
   return (
     <CardStyled key={id}>
-      <div className="container-card">
-        <div className="imgbox">
-          <img src={image} alt={title} />
-        </div>
+      <div className="imgbox">
+        <img src={image} alt={title} />
+      </div>
+      <div className="description">
         <div className="title">{title.toUpperCase()}</div>
         <div className="price-and-button">
           <span className="price">{formatPrice(price)}</span>
@@ -26,22 +26,19 @@ const CardStyled = styled.div`
   height: 330px;
   border-radius: ${theme.borderRadius.extraRound};
   background-color: red;
-  .container-card {
-    padding: 50px 20px;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: stretch;
-    .imgbox {
-      width: 200px;
-      max-height: 145px;
-      text-align: center;
-      img {
-        max-width: 100%;
-        max-height: 100%;
-      }
+
+  .imgbox {
+    width: 200px;
+    max-height: 145px;
+    text-align: center;
+    border: 1px solid fuchsia;
+    img {
+      max-width: 100%;
+      max-height: 100%;
     }
+  }
+  .description {
+    border: 1px solid fuchsia;
     .title {
       font-family: "Amatic SC", cursive;
       font-size: ${theme.fonts.size.P4};
