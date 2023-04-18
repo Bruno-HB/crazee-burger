@@ -6,10 +6,8 @@ import { formatPrice } from "../../../../utils/maths";
 import Card from "../../../reusable-ui/Card";
 
 export default function Menu() {
-  //state
   const [menu, setMenu] = useState(fakeMenu2);
 
-  //affichage
   return (
     <MenuStyled>
       {menu.map(({ id, title, imageSource, price }) => {
@@ -17,7 +15,7 @@ export default function Menu() {
           <Card
             key={id}
             title={title}
-            image={imageSource}
+            imageSource={imageSource}
             leftDescription={formatPrice(price)}
           />
         );

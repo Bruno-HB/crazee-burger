@@ -1,19 +1,19 @@
 import styled from "styled-components";
 import { theme } from "../../theme";
-import Button from "./Button";
+import PrimaryButton from "./PrimaryButton";
 
-export default function Card({ image, title, leftDescription }) {
+export default function Card({ title, imageSource, leftDescription }) {
   return (
     <CardStyled>
       <div className="image">
-        <img src={image} alt={title} />
+        <img src={imageSource} alt={title} />
       </div>
       <div className="text-info">
-        <div className="title">{title.toUpperCase()}</div>
+        <div className="title">{title}</div>
         <div className="description">
           <div className="left-description">{leftDescription}</div>
           <div className="right-description">
-            <Button className="button" label="Ajouter" />
+            <PrimaryButton className="primary-button" label="Ajouter" />
           </div>
         </div>
       </div>
@@ -36,7 +36,7 @@ const CardStyled = styled.div`
     width: 100%;
     height: auto;
     margin-top: 30px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 
     img {
       width: 100%;
@@ -85,9 +85,9 @@ const CardStyled = styled.div`
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        font-size: ${theme.fonts.size.XS};
+        font-size: ${theme.fonts.size.P1};
 
-        .button {
+        .primary-button {
           font-size: ${theme.fonts.size.XS};
           cursor: pointer;
           padding: 12px;
