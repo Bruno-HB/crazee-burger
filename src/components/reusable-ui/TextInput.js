@@ -1,16 +1,16 @@
-import styled from "styled-components"
-import { theme } from "../../theme"
+import styled from "styled-components";
+import { theme } from "../../theme";
 
 export default function TextInput({ value, onChange, Icon, ...extraProps }) {
   return (
-    <InputStyled>
+    <TextInputStyled>
       {Icon && Icon}
       <input onChange={onChange} type="text" {...extraProps} />
-    </InputStyled>
-  )
+    </TextInputStyled>
+  );
 }
 
-const InputStyled = styled.div`
+const TextInputStyled = styled.div`
   background-color: #fff;
   border-radius: ${theme.borderRadius.round};
   display: flex;
@@ -38,4 +38,4 @@ const InputStyled = styled.div`
       color: ${theme.colors.greyMedium};
     }
   }
-`
+`;

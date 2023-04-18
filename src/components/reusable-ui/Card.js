@@ -1,10 +1,10 @@
-import styled from "styled-components"
-import { theme } from "../../theme"
-import PrimaryButton from "./PrimaryButton"
+import styled from "styled-components";
+import { theme } from "../../theme";
+import PrimaryButton from "./PrimaryButton";
 
 export default function Card({ title, imageSource, leftDescription }) {
   return (
-    <CardStyled className="produit">
+    <CardStyled>
       <div className="image">
         <img src={imageSource} alt={title} />
       </div>
@@ -13,12 +13,12 @@ export default function Card({ title, imageSource, leftDescription }) {
         <div className="description">
           <div className="left-description">{leftDescription}</div>
           <div className="right-description">
-            <PrimaryButton className="primary-button" label={"Ajouter"} />
+            <PrimaryButton className="primary-button" label="Ajouter" />
           </div>
         </div>
       </div>
     </CardStyled>
-  )
+  );
 }
 
 const CardStyled = styled.div`
@@ -95,4 +95,4 @@ const CardStyled = styled.div`
       }
     }
   }
-`
+`;

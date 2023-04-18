@@ -4,7 +4,7 @@ import Menu from "./Menu";
 
 export default function Main() {
   return (
-    <MainStyled className="main">
+    <MainStyled>
       {/* <div className="basket">Basket</div> */}
       <Menu />
     </MainStyled>

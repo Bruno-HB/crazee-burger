@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import Profile from "./Profile";
 import ToggleButton from "../../../reusable-ui/ToggleButton";
-import { theme } from "../../../../theme";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import ToastAdmin from "./ToastAdmin";
