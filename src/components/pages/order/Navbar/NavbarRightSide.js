@@ -18,8 +18,4 @@ const NavbarRightSideStyled = styled.div`
   display: flex;
   align-items: center;
   padding-right: 50px;
-
-  .profile {
-    /* background: yellow; */
-  }
 `;
