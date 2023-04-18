@@ -1,6 +1,6 @@
-import styled from "styled-components"
-import { theme } from "../../../../theme"
-import Menu from "./Menu"
+import styled from "styled-components";
+import { theme } from "../../../../theme";
+import Menu from "./Menu";
 
 export default function Main() {
   return (
@@ -8,10 +8,13 @@ export default function Main() {
       {/* <div className="basket">Basket</div> */}
       <Menu />
     </MainStyled>
-  )
+  );
 }
 
 const MainStyled = styled.div`
+  &::-webkit-scrollbar {
+    display: none;
+  }
   background: ${theme.colors.background_white};
   flex: 1; // or you can also use this : height: calc(95vh - 10vh);
 
@@ -26,4 +29,4 @@ const MainStyled = styled.div`
   /* .basket {
     background: pink;
   } */
-`
+`;
