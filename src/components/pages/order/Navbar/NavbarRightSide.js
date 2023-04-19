@@ -10,7 +10,7 @@ export default function NavbarRightSide({ username }) {
   //state
   const { isModeAdmin, setisModeAdmin } = useContext(AdminContext);
   // comportement
-  const displayToastNotificaiton = () => {
+  const displayToastNotification = () => {
     if (!isModeAdmin) {
       toast.info("Mode admin activé", {
         theme: "dark",
@@ -32,7 +32,7 @@ export default function NavbarRightSide({ username }) {
       <ToggleButton
         labelIfUnchecked="activer le mode admin"
         labelIfChecked="désactiver le mode admin"
-        onToggle={displayToastNotificaiton}
+        onToggle={displayToastNotification}
         className="toaster"
         bodyClassName="body-toast"
       />
