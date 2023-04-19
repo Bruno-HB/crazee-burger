@@ -1,12 +1,14 @@
 import styled from "styled-components";
 import { theme } from "../../../../theme";
 import Menu from "./Menu";
+import Panel from "../admin/Panel";
 
 export default function Main() {
   return (
     <MainStyled>
       {/* <div className="basket">Basket</div> */}
       <Menu />
+      <Panel />
     </MainStyled>
   );
 }
