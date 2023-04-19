@@ -1,14 +1,14 @@
 import styled from "styled-components";
 import Profile from "./Profile";
 import ToggleButton from "../../../reusable-ui/ToggleButton";
-import { useState } from "react";
 import { toast } from "react-toastify";
 import ToastAdmin from "./ToastAdmin";
+import { useContext } from "react";
+import AdminContext from "../../../../context/AdminContext";
 
 export default function NavbarRightSide({ username }) {
   //state
-  const [isModeAdmin, setisModeAdmin] = useState(false);
-
+  const { isModeAdmin, setisModeAdmin } = useContext(AdminContext);
   // comportement
   const displayToastNotificaiton = () => {
     if (!isModeAdmin) {
