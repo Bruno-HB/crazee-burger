@@ -1,5 +1,5 @@
-import styled from "styled-components"
-import { theme } from "../../theme"
+import styled from "styled-components";
+import { theme } from "../../theme";
 
 export default function PrimaryButton({ label, Icon, className }) {
   return (
@@ -7,12 +7,11 @@ export default function PrimaryButton({ label, Icon, className }) {
       <span>{label}</span>
       {Icon && Icon}
     </PrimaryButtonStyled>
-  )
+  );
 }
 
 const PrimaryButtonStyled = styled.button`
   width: 100%;
-  border: 1px solid red;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -60,4 +59,4 @@ const PrimaryButtonStyled = styled.button`
       color: ${theme.colors.primary};
     }
   }
-`
+`;

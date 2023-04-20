@@ -9,12 +9,12 @@ import { MdModeEditOutline } from "react-icons/md";
 
 export default function Panel() {
   //state
-  const { isModeAdmin, setisModeAdmin } = useContext(AdminContext);
+
   //comportements
 
   //affichage
 
-  return <>{isModeAdmin && <PanelStyled>Panel</PanelStyled>}</>;
+  return <PanelStyled>Panel</PanelStyled>;
 }
 
 const PanelStyled = styled.div`

@@ -5,9 +5,9 @@ import { toast } from "react-toastify";
 import ToastAdmin from "./ToastAdmin";
 import { useContext } from "react";
 import AdminContext from "../../../../context/AdminContext";
-
-export default function NavbarRightSide({ username }) {
+export default function NavbarRightSide() {
   //state
+
   const { isModeAdmin, setisModeAdmin } = useContext(AdminContext);
   // comportement
   const displayToastNotification = () => {
@@ -30,13 +30,14 @@ export default function NavbarRightSide({ username }) {
   return (
     <NavbarRightSideStyled className="right-side">
       <ToggleButton
+        isChecked={isModeAdmin}
         labelIfUnchecked="activer le mode admin"
         labelIfChecked="désactiver le mode admin"
         onToggle={displayToastNotification}
         className="toaster"
         bodyClassName="body-toast"
       />
-      <Profile username={username} />
+      <Profile />
       <ToastAdmin />
     </NavbarRightSideStyled>
   );
