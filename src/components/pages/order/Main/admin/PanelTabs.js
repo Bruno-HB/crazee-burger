@@ -20,36 +20,50 @@ export default function PanelButtons() {
   } = useContext(OrderContext);
 
   //comportement
-  const handleClickAddButton = () => {
+  const selectTab = (tabSelected) => {
     setIsCollapsed(false);
-    setIsAddSelected(true);
-    setIsEditSelected(false);
+    if (tabSelected === "add") {
+      setIsAddSelected(true);
+      setIsEditSelected(false);
+    }
+
+    if (tabSelected === "edit") {
+      setIsAddSelected(false);
+      setIsEditSelected(true);
+    }
   };
-  const handleClickEditButton = () => {
-    setIsCollapsed(false);
-    setIsAddSelected(false);
-    setIsEditSelected(true);
-  };
+  const tabsConfig = [
+    {
+      label: "",
+      Icon: !isCollapsed ? <FiChevronDown /> : <FiChevronUp />,
+      onClick: () => setIsCollapsed(!isCollapsed),
+      className: isCollapsed ? "is-active" : "",
+    },
+    {
+      label: "Ajouter un produit",
+      Icon: <AiOutlinePlus />,
+      onClick: () => selectTab("add"),
+      className: isAddSelected ? "is-active" : "",
+    },
+    {
+      label: "Modifier un produit",
+      Icon: <MdModeEditOutline />,
+      onClick: () => selectTab("edit"),
+      className: isEditSelected ? "is-active" : "",
+    },
+  ];
   return (
     <PanelButtonsStyled>
-      <Tab
-        label=""
-        Icon={!isCollapsed ? <FiChevronDown /> : <FiChevronUp />}
-        onClick={() => setIsCollapsed(!isCollapsed)}
-        className={isCollapsed ? "is-active" : ""}
-      />
-      <Tab
-        label="Ajouter un produit"
-        Icon={<AiOutlinePlus />}
-        onClick={handleClickAddButton}
-        className={isAddSelected ? "is-active" : ""}
-      />
-      <Tab
-        label="Modifier un produit"
-        Icon={<MdModeEditOutline />}
-        onClick={handleClickEditButton}
-        className={isEditSelected ? "is-active" : ""}
-      />
+      {tabsConfig.map((tab) => {
+        return (
+          <Tab
+            label={tab.label}
+            Icon={tab.Icon}
+            onClick={tab.onClick}
+            className={tab.className}
+          />
+        );
+      })}
     </PanelButtonsStyled>
   );
 }
