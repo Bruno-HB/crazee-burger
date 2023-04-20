@@ -4,11 +4,11 @@ import ToggleButton from "../../../reusable-ui/ToggleButton";
 import { toast } from "react-toastify";
 import ToastAdmin from "./ToastAdmin";
 import { useContext } from "react";
-import AdminContext from "../../../../context/AdminContext";
+import OrderContext from "../../../../context/OrderContext";
 export default function NavbarRightSide() {
   //state
 
-  const { isModeAdmin, setisModeAdmin } = useContext(AdminContext);
+  const { isModeAdmin, setisModeAdmin } = useContext(OrderContext);
   // comportement
   const displayToastNotification = () => {
     if (!isModeAdmin) {

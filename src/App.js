@@ -2,29 +2,37 @@ import LoginPage from "./components/pages/login/LoginPage";
 import { Routes, Route } from "react-router-dom";
 import OrderPage from "./components/pages/order/OrderPage";
 import ErrorPage from "./components/pages/error/ErrorPage";
-import AdminContext from "./context/AdminContext";
-import { useContext, useState } from "react";
+import OrderContext from "./context/OrderContext";
+import { useState } from "react";
 
 function App() {
   // state
   const [isModeAdmin, setisModeAdmin] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isEditSelected, setIsEditSelected] = useState(false);
+  const [isAddSelected, setIsAddSelected] = useState(true);
 
-  const info = useContext(AdminContext);
   // comportements
-  const isModeAdminContext = {
+  const orderContextValue = {
     isModeAdmin,
     setisModeAdmin,
+    isCollapsed,
+    setIsCollapsed,
+    isEditSelected,
+    setIsEditSelected,
+    isAddSelected,
+    setIsAddSelected,
   };
   // affichage
 
   return (
-    <AdminContext.Provider value={isModeAdminContext}>
+    <OrderContext.Provider value={orderContextValue}>
       <Routes>
         <Route path="/" element={<LoginPage />} />
         <Route path="/order/:username" element={<OrderPage />} />
         <Route path="/*" element={<ErrorPage />} />
       </Routes>
-    </AdminContext.Provider>
+    </OrderContext.Provider>
   );
 }
 export default App;

@@ -1,8 +1,14 @@
-import React from "react";
+import { useContext } from "react";
 import styled from "styled-components";
 import { theme } from "../../../../../theme";
+import OrderContext from "../../../../../context/OrderContext";
 
-export default function PanelContent({ isEditSelected, isAddSelected }) {
+export default function PanelContent() {
+  //state
+  const { isEditSelected, isAddSelected } = useContext(OrderContext);
+  //comportement
+
+  //affichage
   return (
     <PanelContentStyled>
       <p>

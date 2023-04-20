@@ -1,4 +1,4 @@
-import React from "react";
+import { useContext } from "react";
 import styled from "styled-components";
 import Tab from "../../../../reusable-ui/Tab";
 import { FiChevronDown } from "react-icons/fi";
@@ -6,16 +6,18 @@ import { FiChevronUp } from "react-icons/fi";
 import { theme } from "../../../../../theme";
 import { AiOutlinePlus } from "react-icons/ai";
 import { MdModeEditOutline } from "react-icons/md";
+import OrderContext from "../../../../../context/OrderContext";
 
-export default function PanelButtons({
-  isCollapsed,
-  setIsCollapsed,
-  isEditSelected,
-  setIsEditSelected,
-  isAddSelected,
-  setIsAddSelected,
-}) {
+export default function PanelButtons() {
   //state
+  const {
+    isCollapsed,
+    setIsCollapsed,
+    isEditSelected,
+    setIsEditSelected,
+    isAddSelected,
+    setIsAddSelected,
+  } = useContext(OrderContext);
 
   //comportement
   const handleClickAddButton = () => {
