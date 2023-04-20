@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { theme } from "../../../../theme";
 import Menu from "./Menu";
-import Panel from "./admin/Panel";
+import Panel from "./Admin/Panel";
 
 export default function Main() {
   return (
