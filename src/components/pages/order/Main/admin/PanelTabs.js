@@ -54,10 +54,13 @@ export default function PanelButtons({
 
 const PanelButtonsStyled = styled.div`
   display: flex;
+  position: absolute;
+  top: -43px;
+  left: 5%;
   padding: 0 20px;
 
   .is-active {
-    color: white;
+    color: ${theme.colors.white};
     border-color: ${theme.colors.background_dark};
     background-color: ${theme.colors.background_dark};
   }

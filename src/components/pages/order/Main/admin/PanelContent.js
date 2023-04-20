@@ -5,8 +5,10 @@ import { theme } from "../../../../../theme";
 export default function PanelContent({ isEditSelected, isAddSelected }) {
   return (
     <PanelContentStyled>
-      {isAddSelected && "Ajouter un produit"}
-      {isEditSelected && "Modifier un produit"}
+      <p>
+        {isAddSelected && "Ajouter un produit"}
+        {isEditSelected && "Modifier un produit"}
+      </p>
     </PanelContentStyled>
   );
 }
@@ -16,4 +18,7 @@ const PanelContentStyled = styled.div`
   background-color: ${theme.colors.white};
   border: 1px solid ${theme.colors.greyLight};
   box-shadow: ${theme.shadows.subtle};
+  p {
+    padding: 0 20px;
+  }
 `;
