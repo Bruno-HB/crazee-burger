@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 import { theme } from "../../../../../theme";
 import AdminContext from "../../../../../context/AdminContext";
-import PanelButton from "../../../../reusable-ui/PanelButton";
+import PanelButton from "../../../../reusable-ui/Tab";
 import { FiChevronDown } from "react-icons/fi";
 import { AiOutlinePlus } from "react-icons/ai";
 import { MdModeAddOutline } from "react-icons/md";

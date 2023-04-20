@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import PanelButton from "../../../../reusable-ui/PanelButton";
+import Tab from "../../../../reusable-ui/Tab";
 import { FiChevronDown } from "react-icons/fi";
 import { FiChevronUp } from "react-icons/fi";
 import { theme } from "../../../../../theme";
@@ -30,19 +30,19 @@ export default function PanelButtons({
   };
   return (
     <PanelButtonsStyled>
-      <PanelButton
+      <Tab
         label=""
         Icon={!isCollapsed ? <FiChevronDown /> : <FiChevronUp />}
         onClick={() => setIsCollapsed(!isCollapsed)}
         className={isCollapsed ? "is-active" : ""}
       />
-      <PanelButton
+      <Tab
         label="Ajouter un produit"
         Icon={<AiOutlinePlus />}
         onClick={handleClickAddButton}
         className={isAddSelected ? "is-active" : ""}
       />
-      <PanelButton
+      <Tab
         label="Modifier un produit"
         Icon={<MdModeEditOutline />}
         onClick={handleClickEditButton}
