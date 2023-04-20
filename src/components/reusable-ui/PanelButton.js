@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { theme } from "../../theme";
 
-export default function PanelButton({ Icon }) {
+export default function PanelButton({ Icon, onClick, className }) {
   return (
-    <PanelButtonStyled>
+    <PanelButtonStyled onClick={onClick} className={className}>
       <div className="icon">{Icon}</div>
     </PanelButtonStyled>
   );

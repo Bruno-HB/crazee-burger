@@ -8,18 +8,19 @@ import { AiOutlinePlus } from "react-icons/ai";
 import { MdModeEditOutline } from "react-icons/md";
 import PanelButtons from "./PanelButtons";
 import PanelContent from "./PanelContent";
+import { useState } from "react";
 
 export default function Panel() {
   //state
-
+  const [isCollapsed, setIsCollapsed] = useState(false);
   //comportements
 
   //affichage
 
   return (
     <PanelStyled>
-      <PanelButtons />
-      <PanelContent />
+      <PanelButtons setIsCollapsed={setIsCollapsed} isCollapsed={isCollapsed} />
+      {isCollapsed && <PanelContent />}
     </PanelStyled>
   );
 }
