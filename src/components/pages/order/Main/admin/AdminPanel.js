@@ -10,7 +10,7 @@ import PanelButtons from "./PanelButtons";
 import PanelContent from "./PanelContent";
 import { useState } from "react";
 
-export default function Panel() {
+export default function AdminPanel() {
   //state
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [isEditSelected, setIsEditSelected] = useState(false);
@@ -20,7 +20,7 @@ export default function Panel() {
   //affichage
 
   return (
-    <PanelStyled>
+    <AdminPanelStyled>
       <PanelButtons
         setIsCollapsed={setIsCollapsed}
         isCollapsed={isCollapsed}
@@ -35,11 +35,11 @@ export default function Panel() {
           isAddSelected={isAddSelected}
         />
       )}
-    </PanelStyled>
+    </AdminPanelStyled>
   );
 }
 
-const PanelStyled = styled.div`
+const AdminPanelStyled = styled.div`
   position: absolute;
   bottom: 0;
   left: 0;

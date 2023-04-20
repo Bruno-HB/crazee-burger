@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { theme } from "../../../../theme";
 import Menu from "./Menu";
-import Panel from "./Admin/Panel";
+import AdminPanel from "./Admin/AdminPanel";
 import { useContext } from "react";
 import AdminContext from "../../../../context/AdminContext";
 
@@ -11,9 +11,9 @@ export default function Main() {
   return (
     <MainStyled>
       {/* <div className="basket">Basket</div> */}
-      <div className="menu-and-panel">
+      <div className="menu-and-admin-panel">
         <Menu />
-        {isModeAdmin && <Panel />}
+        {isModeAdmin && <AdminPanel />}
       </div>
     </MainStyled>
   );
@@ -38,7 +38,7 @@ const MainStyled = styled.div`
     background: pink;
   } */
 
-  .menu-and-panel {
+  .menu-and-admin-panel {
     position: relative;
     overflow-y: hidden;
     display: grid;
