@@ -2,19 +2,18 @@ import { useContext } from "react";
 import styled from "styled-components";
 import { theme } from "../../../../../theme";
 import OrderContext from "../../../../../context/OrderContext";
+import { getTabsConfig } from "./getTabsConfig";
 
 export default function PanelContent() {
   //state
-  const { isEditSelected, isAddSelected } = useContext(OrderContext);
+  const { currentTabSelected } = useContext(OrderContext);
   //comportement
-
+  const tabs = getTabsConfig();
+  const tabSelected = tabs.find((tab) => currentTabSelected === tab.index);
   //affichage
   return (
     <PanelContentStyled>
-      <p>
-        {isAddSelected && "Ajouter un produit"}
-        {isEditSelected && "Modifier un produit"}
-      </p>
+      <p>{tabSelected.label && tabSelected.label}</p>
     </PanelContentStyled>
   );
 }
