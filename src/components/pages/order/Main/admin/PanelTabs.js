@@ -25,6 +25,7 @@ export default function PanelButtons() {
   return (
     <PanelButtonsStyled>
       <Tab
+        key={"chevronUpDown"}
         label={""}
         Icon={!isCollapsed ? <FiChevronDown /> : <FiChevronUp />}
         onClick={() => setIsCollapsed(!isCollapsed)}
@@ -33,6 +34,7 @@ export default function PanelButtons() {
       {tabs.map((tab) => {
         return (
           <Tab
+            key={tab.index}
             label={tab.label}
             Icon={tab.Icon}
             onClick={() => selectTab(tab.index)}
