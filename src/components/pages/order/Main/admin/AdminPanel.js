@@ -1,12 +1,6 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
-import { theme } from "../../../../../theme";
-import AdminContext from "../../../../../context/AdminContext";
-import PanelButton from "../../../../reusable-ui/Tab";
-import { FiChevronDown } from "react-icons/fi";
-import { AiOutlinePlus } from "react-icons/ai";
-import { MdModeAddOutline } from "react-icons/md";
-import PanelButtons from "./PanelButtons";
+import PanelTabs from "./PanelTabs";
 import PanelContent from "./PanelContent";
 import { useState } from "react";
 
@@ -21,7 +15,7 @@ export default function AdminPanel() {
 
   return (
     <AdminPanelStyled>
-      <PanelButtons
+      <PanelTabs
         setIsCollapsed={setIsCollapsed}
         isCollapsed={isCollapsed}
         isEditSelected={isEditSelected}
