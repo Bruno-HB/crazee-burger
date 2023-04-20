@@ -1,27 +1,27 @@
-import React, { useState } from "react"
-import { useNavigate } from "react-router-dom"
-import styled from "styled-components"
-import { IoChevronForward } from "react-icons/io5"
-import { BsPersonCircle } from "react-icons/bs"
-import TextInput from "../../reusable-ui/TextInput"
-import PrimaryButton from "../../reusable-ui/PrimaryButton"
-import { theme } from "../../../theme"
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
+import { IoChevronForward } from "react-icons/io5";
+import { BsPersonCircle } from "react-icons/bs";
+import TextInput from "../../reusable-ui/TextInput";
+import PrimaryButton from "../../reusable-ui/PrimaryButton";
+import { theme } from "../../../theme";
 
 export default function LoginForm() {
   // state
-  const [inputValue, setInputValue] = useState("")
-  const navigate = useNavigate()
+  const [inputValue, setInputValue] = useState("Bruno");
+  const navigate = useNavigate();
 
   // comportements
   const handleSubmit = (event) => {
-    event.preventDefault()
-    setInputValue("")
-    navigate(`order/${inputValue}`)
-  }
+    event.preventDefault();
+    setInputValue("");
+    navigate(`order/${inputValue}`);
+  };
 
   const handleChange = (event) => {
-    setInputValue(event.target.value)
-  }
+    setInputValue(event.target.value);
+  };
 
   // affichage
   return (
@@ -46,7 +46,7 @@ export default function LoginForm() {
         />
       </div>
     </LoginFormStyled>
-  )
+  );
 }
 
 const LoginFormStyled = styled.form`
@@ -81,4 +81,4 @@ const LoginFormStyled = styled.form`
     font-size: ${theme.fonts.size.P0};
     margin-left: 10px;
   }
-`
+`;
