@@ -10,7 +10,6 @@ function App() {
   const [isModeAdmin, setisModeAdmin] = useState(false);
 
   const info = useContext(AdminContext);
-  console.log(info);
   // comportements
   const isModeAdminContext = {
     isModeAdmin,
