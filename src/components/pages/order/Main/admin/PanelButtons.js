@@ -4,6 +4,7 @@ import PanelButton from "../../../../reusable-ui/PanelButton";
 import { FiChevronDown } from "react-icons/fi";
 import { FiChevronUp } from "react-icons/fi";
 import { theme } from "../../../../../theme";
+import { AiOutlinePlus } from "react-icons/ai";
 
 export default function PanelButtons({ isCollapsed, setIsCollapsed }) {
   //comportement
@@ -13,7 +14,14 @@ export default function PanelButtons({ isCollapsed, setIsCollapsed }) {
   return (
     <PanelButtonsStyled>
       <PanelButton
+        label=""
         Icon={isCollapsed ? <FiChevronDown /> : <FiChevronUp />}
+        onClick={handleClick}
+        className={!isCollapsed ? "is-active" : ""}
+      />
+      <PanelButton
+        label="Ajouter un produit"
+        Icon={<AiOutlinePlus />}
         onClick={handleClick}
         className={!isCollapsed ? "is-active" : ""}
       />
@@ -29,5 +37,9 @@ const PanelButtonsStyled = styled.div`
     color: white;
     border-color: ${theme.colors.background_dark};
     background-color: ${theme.colors.background_dark};
+  }
+
+  button {
+    margin-left: 1px;
   }
 `;
