@@ -2,8 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import { theme } from "../../../../../theme";
 
-export default function PanelContent() {
-  return <PanelContentStyled>PanelContent</PanelContentStyled>;
+export default function PanelContent({ isEditSelected, isAddSelected }) {
+  return (
+    <PanelContentStyled>
+      {isAddSelected && "Ajouter un produit"}
+      {isEditSelected && "Modifier un produit"}
+    </PanelContentStyled>
+  );
 }
 
 const PanelContentStyled = styled.div`
