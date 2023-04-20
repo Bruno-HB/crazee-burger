@@ -5,7 +5,7 @@ import { FiChevronDown } from "react-icons/fi";
 import { FiChevronUp } from "react-icons/fi";
 import { theme } from "../../../../../theme";
 import OrderContext from "../../../../../context/OrderContext";
-import { getTabsConfig } from "./getTabsConfig";
+import { tabsConfig } from "./tabsConfig";
 
 export default function PanelButtons() {
   //state
@@ -21,7 +21,7 @@ export default function PanelButtons() {
     setIsCollapsed(false);
     setCurrentTabSelected(tabSelected);
   };
-  const tabs = getTabsConfig(currentTabSelected);
+  const tabs = tabsConfig;
   return (
     <PanelButtonsStyled>
       <Tab

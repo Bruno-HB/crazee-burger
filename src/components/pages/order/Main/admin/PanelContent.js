@@ -2,13 +2,13 @@ import { useContext } from "react";
 import styled from "styled-components";
 import { theme } from "../../../../../theme";
 import OrderContext from "../../../../../context/OrderContext";
-import { getTabsConfig } from "./getTabsConfig";
+import { tabsConfig } from "./tabsConfig";
 
 export default function PanelContent() {
   //state
   const { currentTabSelected } = useContext(OrderContext);
   //comportement
-  const tabs = getTabsConfig();
+  const tabs = tabsConfig;
   const tabSelected = tabs.find((tab) => currentTabSelected === tab.index);
   //affichage
   return (
