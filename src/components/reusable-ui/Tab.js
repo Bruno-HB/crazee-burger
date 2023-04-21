@@ -19,30 +19,34 @@ const TabStyled = styled.button`
   align-items: center;
 
   cursor: pointer;
+
   position: relative;
-  left: 5%;
   top: 1px;
 
   font-size: ${theme.fonts.size.P0};
   color: ${theme.colors.greySemiDark};
 
   background-color: ${theme.colors.white};
+  box-shadow: ${theme.shadows.subtle};
+
   border-width: 1px 1px 2px 1px;
   border-style: solid;
   border-color: ${theme.colors.greyLight};
-  box-shadow: ${theme.shadows.subtle};
-  border-radius: 5px 5px 0px 0px;
+
+  border-radius: ${theme.borderRadius.round};
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
 
   :hover {
     border-bottom: 2px solid ${theme.colors.white};
+    text-decoration: underline;
   }
+
   .icon {
     display: flex;
   }
+
   .label {
     margin-left: 13px;
-    :hover {
-      text-decoration: underline;
-    }
   }
 `;

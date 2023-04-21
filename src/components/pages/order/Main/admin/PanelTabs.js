@@ -51,7 +51,6 @@ const PanelButtonsStyled = styled.div`
   position: absolute;
   top: -43px;
   left: 5%;
-  padding: 0 20px;
 
   .is-active {
     color: ${theme.colors.white};
