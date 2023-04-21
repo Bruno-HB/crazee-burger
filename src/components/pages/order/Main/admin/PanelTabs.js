@@ -29,7 +29,7 @@ export default function PanelButtons() {
         label={""}
         Icon={!isCollapsed ? <FiChevronDown /> : <FiChevronUp />}
         onClick={() => setIsCollapsed(!isCollapsed)}
-        className={isCollapsed ? "is-active" : ""}
+        className={isCollapsed ? "is-active" : "is-not-active"}
       />
       {tabs.map((tab) => {
         return (
@@ -38,7 +38,11 @@ export default function PanelButtons() {
             label={tab.label}
             Icon={tab.Icon}
             onClick={() => selectTab(tab.index)}
-            className={currentTabSelected === tab.index ? "is-active" : ""}
+            className={
+              currentTabSelected === tab.index
+                ? "is-active "
+                : `${!isCollapsed && "is-not-active"}`
+            }
           />
         );
       })}
@@ -56,6 +60,11 @@ const PanelButtonsStyled = styled.div`
     color: ${theme.colors.white};
     border-color: ${theme.colors.background_dark};
     background-color: ${theme.colors.background_dark};
+  }
+  .is-not-active {
+    :hover {
+      border-bottom: 2px solid ${theme.colors.white};
+    }
   }
 
   button {
