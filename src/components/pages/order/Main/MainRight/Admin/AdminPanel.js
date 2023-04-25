@@ -2,7 +2,7 @@ import { useContext } from "react";
 import styled from "styled-components";
 import PanelTabs from "./PanelTabs";
 import PanelContent from "./PanelContent";
-import OrderContext from "../../../../../context/OrderContext";
+import OrderContext from "../../../../../../context/OrderContext";
 
 export default function AdminPanel() {
   //state

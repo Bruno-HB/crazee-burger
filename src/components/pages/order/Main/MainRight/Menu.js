@@ -1,9 +1,9 @@
 import { useState } from "react";
 import styled from "styled-components";
-import { fakeMenu2 } from "../../../../fakeData/fakeMenu";
-import { theme } from "../../../../theme";
-import { formatPrice } from "../../../../utils/maths";
-import Card from "../../../reusable-ui/Card";
+import { fakeMenu2 } from "../../../../../fakeData/fakeMenu";
+import { theme } from "../../../../../theme";
+import { formatPrice } from "../../../../../utils/maths";
+import Card from "../../../../reusable-ui/Card";
 
 export default function Menu() {
   const [menu, setMenu] = useState(fakeMenu2);
@@ -14,6 +14,8 @@ export default function Menu() {
         return (
           <Card
             key={id}
+            id={id}
+            onClick={handleClickDeleteButton}
             title={title}
             imageSource={imageSource}
             leftDescription={formatPrice(price)}

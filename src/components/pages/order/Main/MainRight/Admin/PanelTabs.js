@@ -1,13 +1,13 @@
 import { useContext } from "react";
 import styled from "styled-components";
-import Tab from "../../../../reusable-ui/Tab";
+import Tab from "../../../../../reusable-ui/Tab";
 import { FiChevronDown } from "react-icons/fi";
 import { FiChevronUp } from "react-icons/fi";
-import { theme } from "../../../../../theme";
-import OrderContext from "../../../../../context/OrderContext";
+import { theme } from "../../../../../../theme";
+import OrderContext from "../../../../../../context/OrderContext";
 import { tabsConfig } from "./tabsConfig";
 
-export default function PanelButtons() {
+export default function PanelTabs() {
   //state
   const {
     isCollapsed,
