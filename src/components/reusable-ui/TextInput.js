@@ -5,7 +5,7 @@ export default function TextInput({ value, onChange, Icon, ...extraProps }) {
   return (
     <TextInputStyled>
       {Icon && Icon}
-      <input onChange={onChange} type="text" {...extraProps} />
+      <input value={value} onChange={onChange} type="text" {...extraProps} />
     </TextInputStyled>
   );
 }
@@ -17,13 +17,11 @@ const TextInputStyled = styled.div`
   align-items: center;
   padding: 18px 24px;
   margin: 18px 0; // could be handle in Parent too
-  /* white-space: nowrap; */
 
   .icon {
     font-size: ${theme.fonts.size.P0};
     margin-right: 8px;
     color: ${theme.colors.greySemiDark};
-    /* min-width: 1em; // that way, the icon size is NOT affected by width of the entire component. */
   }
 
   input {
@@ -31,7 +29,6 @@ const TextInputStyled = styled.div`
     font-size: ${theme.fonts.size.P0};
     color: ${theme.colors.dark};
     width: 100%;
-    /* display: flex; */
 
     &::placeholder {
       background: ${theme.colors.white};
