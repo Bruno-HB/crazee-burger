@@ -4,14 +4,18 @@ import { fakeMenu } from "../../../../../fakeData/fakeMenu";
 import { theme } from "../../../../../theme";
 import { formatPrice } from "../../../../../utils/maths";
 import Card from "../../../../reusable-ui/Card";
+import {
+  getFilteredArrayWithoutSelected,
+  parseJson,
+} from "../../../../../utils/functions";
 
 export default function Menu() {
   const [menu, setMenu] = useState(fakeMenu.MEDIUM);
 
   //comportement
   const handleClickDeleteButton = (id) => {
-    const copyMenu = JSON.parse(JSON.stringify(menu));
-    const updatedMenu = copyMenu.filter((product) => product.id !== id);
+    const copyMenu = parseJson(menu);
+    const updatedMenu = getFilteredArrayWithoutSelected(copyMenu, id);
     setMenu(updatedMenu);
   };
 
