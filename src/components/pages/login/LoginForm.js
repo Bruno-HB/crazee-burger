@@ -33,6 +33,7 @@ export default function LoginForm() {
       </div>
       <div>
         <TextInput
+          className="inputStyle"
           value={inputValue}
           onChange={handleChange}
           placeholder={"Entrez votre prénom"}
@@ -57,6 +58,10 @@ const LoginFormStyled = styled.form`
   padding: 40px ${theme.spacing.lg};
   border-radius: ${theme.borderRadius.round};
   font-family: "Amatic SC", cursive;
+  .inputStyle {
+    padding: 18px 24px;
+    margin: 18px 0; // could be handle in Parent too
+  }
 
   hr {
     border: 1.5px solid ${theme.colors.loginLine};
