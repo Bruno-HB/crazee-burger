@@ -86,4 +86,9 @@ const LoginFormStyled = styled.form`
     font-size: ${theme.fonts.size.P0};
     margin-left: 10px;
   }
+
+  input::placeholder {
+    background: ${theme.colors.white};
+    color: ${theme.colors.greyMedium};
+  }
 `;

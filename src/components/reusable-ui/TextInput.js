@@ -33,10 +33,5 @@ const TextInputStyled = styled.div`
     font-size: ${theme.fonts.size.P0};
     color: ${theme.colors.dark};
     width: 100%;
-
-    &::placeholder {
-      background: ${theme.colors.white};
-      color: ${theme.colors.greyMedium};
-    }
   }
 `;

@@ -1,6 +1,10 @@
 import { useState } from "react";
 import styled from "styled-components";
 import TextInput from "../../../../../reusable-ui/TextInput";
+import { FaHamburger } from "react-icons/fa";
+import { BsFillCameraFill } from "react-icons/bs";
+import { MdOutlineEuro } from "react-icons/md";
+import { theme } from "../../../../../../theme";
 
 export default function AddForm() {
   //state
@@ -12,11 +16,28 @@ export default function AddForm() {
   //affichage
   return (
     <AddFormStyled>
-      <div>Aucune image</div>
+      <div className="image">Aucune image</div>
       <form>
-        {/*<TextInput value={productName} />
-        <TextInput value={productUrl} />
-        <TextInput value={productPrice} />*/}
+        <TextInput
+          className={"input"}
+          value={productName}
+          Icon={<FaHamburger className="icon" />}
+          placeholder={"Nom du produit (ex: Super Burger)"}
+        />
+        <TextInput
+          className={"input"}
+          value={productUrl}
+          Icon={<BsFillCameraFill className="icon" />}
+          placeholder={
+            "Lien URL d'une image (ex: https://la-photo-de-mon-produit.png)"
+          }
+        />
+        <TextInput
+          className={"input"}
+          value={productPrice}
+          placeholder={"Prix"}
+          Icon={<MdOutlineEuro className="icon" />}
+        />
       </form>
     </AddFormStyled>
   );
@@ -26,7 +47,7 @@ const AddFormStyled = styled.div`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  div {
+  .image {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -37,7 +58,7 @@ const AddFormStyled = styled.div`
     height: 120.14px;
     //left: calc(50% - 215.14px / 2 - 332.73px);
     left: 71px;
-    top: calc(50% - 120.14px / 2 - 21.02px);
+    top: 31px;
 
     border: 1px solid #e4e5e9;
     border-radius: 5px;
@@ -53,5 +74,30 @@ const AddFormStyled = styled.div`
     align-items: center;
 
     color: #93a2b1;
+  }
+  form {
+    box-sizing: border-box;
+    position: absolute;
+    left: 306.14px;
+    top: 31px;
+    .input {
+      .icon {
+        margin-left: 24px;
+        margin-right: 15px;
+      }
+      width: 645.45px;
+      height: 35px;
+      background-color: ${theme.colors.greyLight};
+      margin-bottom: 8px;
+      input {
+        margin-top: 8px;
+        margin-bottom: 8px;
+
+        &::placeholder {
+          background: ${theme.colors.greyLight};
+          color: ${theme.colors.greyMedium};
+        }
+      }
+    }
   }
 `;
