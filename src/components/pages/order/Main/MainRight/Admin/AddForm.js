@@ -2,30 +2,53 @@ import { useState } from "react";
 import styled from "styled-components";
 import TextInput from "../../../../../reusable-ui/TextInput";
 import { FaHamburger } from "react-icons/fa";
+import { FiCheck } from "react-icons/fi";
 import { BsFillCameraFill } from "react-icons/bs";
 import { MdOutlineEuro } from "react-icons/md";
 import { theme } from "../../../../../../theme";
+import PrimaryButton from "../../../../../reusable-ui/PrimaryButton";
 
 export default function AddForm() {
   //state
   const [productName, setProductName] = useState("");
   const [productUrl, setProductUrl] = useState("");
   const [productPrice, setProductPrice] = useState("");
+  const [success, setSuccess] = useState(false);
   //comportements
+  const handleSubmit = (event) => {
+    setSuccess(true);
+    event.preventDefault();
+    turnOffSuccess();
+  };
 
+  const turnOffSuccess = () => {
+    setTimeout(() => setSuccess(false), 2000);
+  };
+
+  const handleChangeName = (event) => {
+    setProductName(event.target.value);
+  };
+  const handleChangeUrl = (event) => {
+    setProductUrl(event.target.value);
+  };
+  const handleChangePrice = (event) => {
+    setProductPrice(event.target.value);
+  };
   //affichage
   return (
     <AddFormStyled>
       <div className="image">Aucune image</div>
-      <form>
+      <form action="submit" onSubmit={handleSubmit}>
         <TextInput
           className={"input"}
+          onChange={handleChangeName}
           value={productName}
           Icon={<FaHamburger className="icon" />}
           placeholder={"Nom du produit (ex: Super Burger)"}
         />
         <TextInput
           className={"input"}
+          onChange={handleChangeUrl}
           value={productUrl}
           Icon={<BsFillCameraFill className="icon" />}
           placeholder={
@@ -34,10 +57,22 @@ export default function AddForm() {
         />
         <TextInput
           className={"input"}
+          onChange={handleChangePrice}
           value={productPrice}
           placeholder={"Prix"}
           Icon={<MdOutlineEuro className="icon" />}
         />
+        <div>
+          <PrimaryButton
+            label={"Ajouter un nouveau produit au menu"}
+            className={"button"}
+          />
+          {success && (
+            <span className="success">
+              <FiCheck className="icon-success" /> Ajouté avec succès !
+            </span>
+          )}
+        </div>
       </form>
     </AddFormStyled>
   );
@@ -91,6 +126,7 @@ const AddFormStyled = styled.div`
 
       input {
         margin-top: 8px;
+        background-color: ${theme.colors.greyLight};
         margin-bottom: 8px;
         padding: 0 0;
 
@@ -98,6 +134,33 @@ const AddFormStyled = styled.div`
           background: ${theme.colors.greyLight};
           color: ${theme.colors.greyMedium};
         }
+      }
+    }
+    .button {
+      width: 275.25px;
+      height: 34.05px;
+      background-color: ${theme.colors.success};
+      border: 1px solid ${theme.colors.success};
+      font-size: ${theme.fonts.size.XS};
+      :hover {
+        color: ${theme.colors.white};
+      }
+      :active {
+        border: 1px solid ${theme.colors.success};
+        color: ${theme.colors.success};
+        background-color: ${theme.colors.white};
+      }
+    }
+    .success {
+      color: ${theme.colors.success};
+      margin-left: 18px;
+      font-size: ${theme.fonts.size.SM};
+      font-weight: ${theme.fonts.weights.regular};
+      .icon-success {
+        border: 1px solid ${theme.colors.success};
+        border-radius: ${theme.borderRadius.circle};
+        width: ${theme.fonts.size.XS};
+        height: ${theme.fonts.size.XS};
       }
     }
   }
