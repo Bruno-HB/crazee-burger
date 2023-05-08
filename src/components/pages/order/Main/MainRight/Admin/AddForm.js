@@ -23,9 +23,10 @@ export default function AddForm() {
     event.preventDefault();
     turnOffSuccess();
     const copyMenu = parseJson(menu);
+    const imageSource = productUrl ? productUrl : "/images/coming-soon.png";
     const newProduct = {
       id: Date.now(),
-      imageSource: "/images/coming-soon.png",
+      imageSource,
       title: productName,
       price: productPrice,
       quantity: 0,
@@ -55,7 +56,9 @@ export default function AddForm() {
   //affichage
   return (
     <AddFormStyled>
-      <div className="image">Aucune image</div>
+      {productUrl && <img src={`${productUrl}?w=100&h=100`} />}
+      {!productUrl && <div className="image">Aucune image</div>}
+
       <form action="submit" onSubmit={handleSubmit}>
         <TextInput
           className={"input"}
@@ -103,6 +106,17 @@ const AddFormStyled = styled.div`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  img {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+
+    position: absolute;
+    left: 128.56px;
+    top: 40.06px;
+  }
   .image {
     display: flex;
     flex-direction: row;
