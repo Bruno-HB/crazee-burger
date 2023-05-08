@@ -1,6 +1,5 @@
-import { useState } from "react";
+import { useContext } from "react";
 import styled from "styled-components";
-import { fakeMenu } from "../../../../../fakeData/fakeMenu";
 import { theme } from "../../../../../theme";
 import { formatPrice } from "../../../../../utils/maths";
 import Card from "../../../../reusable-ui/Card";
@@ -8,9 +7,10 @@ import {
   getFilteredArrayWithoutSelected,
   parseJson,
 } from "../../../../../utils/functions";
+import MenuContext from "../../../../../context/MenuContext";
 
 export default function Menu() {
-  const [menu, setMenu] = useState(fakeMenu.MEDIUM);
+  const { menu, setMenu } = useContext(MenuContext);
 
   //comportement
   const handleClickDeleteButton = (id) => {
