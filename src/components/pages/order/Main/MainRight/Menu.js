@@ -8,9 +8,12 @@ import {
   parseJson,
 } from "../../../../../utils/functions";
 import MenuContext from "../../../../../context/MenuContext";
+import OrderContext from "../../../../../context/OrderContext";
+import PrimaryButton from "../../../../reusable-ui/PrimaryButton";
 
 export default function Menu() {
   const { menu, setMenu } = useContext(MenuContext);
+  const { isModeAdmin } = useContext(OrderContext);
 
   //comportement
   const handleClickDeleteButton = (id) => {
@@ -21,18 +24,20 @@ export default function Menu() {
 
   return (
     <MenuStyled>
-      {menu.map(({ id, title, imageSource, price }) => {
-        return (
-          <Card
-            key={id}
-            id={id}
-            onClick={handleClickDeleteButton}
-            title={title}
-            imageSource={imageSource}
-            leftDescription={formatPrice(price)}
-          />
-        );
-      })}
+      {menu.length > 0 &&
+        menu.map(({ id, title, imageSource, price }) => {
+          return (
+            <Card
+              key={id}
+              id={id}
+              onClick={handleClickDeleteButton}
+              title={title}
+              imageSource={imageSource}
+              leftDescription={formatPrice(price)}
+            />
+          );
+        })}
+      {menu.length === 0 && `${isModeAdmin ? `test` : "sismique"}`}
     </MenuStyled>
   );
 }
