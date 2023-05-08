@@ -34,6 +34,9 @@ export default function AddForm() {
     };
     copyMenu.push(newProduct);
     setMenu(copyMenu);
+    setProductName("");
+    setProductUrl("");
+    setProductPrice("");
   };
 
   const turnOffSuccess = () => {
@@ -74,7 +77,7 @@ export default function AddForm() {
         />
         <TextInput
           className={"input"}
-          type="number"
+          type="text"
           onChange={handleChangePrice}
           value={productPrice}
           placeholder={"Prix"}
