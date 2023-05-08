@@ -15,7 +15,7 @@ export default function PanelContent() {
   return (
     <PanelContentStyled>
       {/*<p>{tabSelected.label && tabSelected.label}</p>*/}
-      <AddForm />
+      {currentTabSelected === "add" && <AddForm />}
     </PanelContentStyled>
   );
 }
