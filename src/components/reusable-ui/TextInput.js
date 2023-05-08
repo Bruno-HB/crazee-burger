@@ -6,12 +6,13 @@ export default function TextInput({
   onChange,
   Icon,
   className,
+  type,
   ...extraProps
 }) {
   return (
     <TextInputStyled className={className}>
       {Icon && Icon}
-      <input value={value} onChange={onChange} type="text" {...extraProps} />
+      <input value={value} onChange={onChange} type={type} {...extraProps} />
     </TextInputStyled>
   );
 }

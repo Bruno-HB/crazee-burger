@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import styled from "styled-components";
 import TextInput from "../../../../../reusable-ui/TextInput";
 import { FaHamburger } from "react-icons/fa";
@@ -7,6 +7,8 @@ import { BsFillCameraFill } from "react-icons/bs";
 import { MdOutlineEuro } from "react-icons/md";
 import { theme } from "../../../../../../theme";
 import PrimaryButton from "../../../../../reusable-ui/PrimaryButton";
+import MenuContext from "../../../../../../context/MenuContext";
+import { parseJson } from "../../../../../../utils/functions";
 
 export default function AddForm() {
   //state
@@ -14,11 +16,24 @@ export default function AddForm() {
   const [productUrl, setProductUrl] = useState("");
   const [productPrice, setProductPrice] = useState("");
   const [success, setSuccess] = useState(false);
+  const { menu, setMenu } = useContext(MenuContext);
   //comportements
   const handleSubmit = (event) => {
     setSuccess(true);
     event.preventDefault();
     turnOffSuccess();
+    const copyMenu = parseJson(menu);
+    const newProduct = {
+      id: Date.now(),
+      imageSource: "/images/coming-soon.png",
+      title: productName,
+      price: productPrice,
+      quantity: 0,
+      isAvailable: true,
+      isAdvertised: false,
+    };
+    copyMenu.push(newProduct);
+    setMenu(copyMenu);
   };
 
   const turnOffSuccess = () => {
@@ -41,6 +56,7 @@ export default function AddForm() {
       <form action="submit" onSubmit={handleSubmit}>
         <TextInput
           className={"input"}
+          type="text"
           onChange={handleChangeName}
           value={productName}
           Icon={<FaHamburger className="icon" />}
@@ -48,6 +64,7 @@ export default function AddForm() {
         />
         <TextInput
           className={"input"}
+          type="text"
           onChange={handleChangeUrl}
           value={productUrl}
           Icon={<BsFillCameraFill className="icon" />}
@@ -57,6 +74,7 @@ export default function AddForm() {
         />
         <TextInput
           className={"input"}
+          type="number"
           onChange={handleChangePrice}
           value={productPrice}
           placeholder={"Prix"}
