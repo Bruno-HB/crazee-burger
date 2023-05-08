@@ -56,11 +56,10 @@ const AddFormStyled = styled.div`
     position: absolute;
     width: 215.14px;
     height: 120.14px;
-    //left: calc(50% - 215.14px / 2 - 332.73px);
     left: 71px;
     top: 31px;
 
-    border: 1px solid #e4e5e9;
+    border: 1px solid ${theme.colors.greyLight};
     border-radius: 5px;
     white-space: nowrap;
     width: 106px;
@@ -89,9 +88,11 @@ const AddFormStyled = styled.div`
       height: 35px;
       background-color: ${theme.colors.greyLight};
       margin-bottom: 8px;
+
       input {
         margin-top: 8px;
         margin-bottom: 8px;
+        padding: 0 0;
 
         &::placeholder {
           background: ${theme.colors.greyLight};
