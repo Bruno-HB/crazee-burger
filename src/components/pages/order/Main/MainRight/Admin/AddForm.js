@@ -80,7 +80,7 @@ export default function AddForm() {
         />
         <TextInput
           className={"input"}
-          type="text"
+          type="number"
           onChange={handleChangePrice}
           value={productPrice}
           placeholder={"Prix"}
