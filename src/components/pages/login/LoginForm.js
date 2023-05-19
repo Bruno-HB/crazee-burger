@@ -45,6 +45,7 @@ export default function LoginForm() {
         <PrimaryButton
           label={"Accéder à mon espace"}
           Icon={<IoChevronForward className="icon" />}
+          className={"button"}
         />
       </div>
     </LoginFormStyled>
@@ -91,5 +92,10 @@ const LoginFormStyled = styled.form`
   input::placeholder {
     background: ${theme.colors.white};
     color: ${theme.colors.greyMedium};
+  }
+  .button {
+    font-family: Arial;
+    font-weight: ${theme.fonts.weights.bold};
+    cursor: pointer;
   }
 `;

@@ -156,27 +156,30 @@ const AddFormStyled = styled.div`
       }
       width: 645.45px;
       height: 35px;
-      background-color: ${theme.colors.greyLight};
+      background-color: ${theme.colors.background_white};
       margin-bottom: 8px;
 
       input {
         margin-top: 8px;
-        background-color: ${theme.colors.greyLight};
+        background-color: ${theme.colors.background_white};
         margin-bottom: 8px;
         padding: 0 0;
 
         &::placeholder {
-          background: ${theme.colors.greyLight};
+          background: ${theme.colors.background_white};
           color: ${theme.colors.greyMedium};
         }
       }
     }
     .button {
+      cursor: pointer;
       width: 275.25px;
       height: 34.05px;
       background-color: ${theme.colors.success};
       border: 1px solid ${theme.colors.success};
       font-size: ${theme.fonts.size.XS};
+      font-family: Arial;
+      font-weight: ${theme.fonts.weights.bold};
       :hover {
         color: ${theme.colors.white};
       }
