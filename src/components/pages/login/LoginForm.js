@@ -33,16 +33,19 @@ export default function LoginForm() {
       </div>
       <div>
         <TextInput
+          className="inputStyle"
           value={inputValue}
           onChange={handleChange}
           placeholder={"Entrez votre prénom"}
           required
+          type="text"
           Icon={<BsPersonCircle className="icon" />}
         />
 
         <PrimaryButton
           label={"Accéder à mon espace"}
           Icon={<IoChevronForward className="icon" />}
+          className={"button"}
         />
       </div>
     </LoginFormStyled>
@@ -57,6 +60,10 @@ const LoginFormStyled = styled.form`
   padding: 40px ${theme.spacing.lg};
   border-radius: ${theme.borderRadius.round};
   font-family: "Amatic SC", cursive;
+  .inputStyle {
+    padding: 18px 24px;
+    margin: 18px 0; // could be handle in Parent too
+  }
 
   hr {
     border: 1.5px solid ${theme.colors.loginLine};
@@ -80,5 +87,15 @@ const LoginFormStyled = styled.form`
     align-items: center;
     font-size: ${theme.fonts.size.P0};
     margin-left: 10px;
+  }
+
+  input::placeholder {
+    background: ${theme.colors.white};
+    color: ${theme.colors.greyMedium};
+  }
+  .button {
+    font-family: Arial;
+    font-weight: ${theme.fonts.weights.bold};
+    cursor: pointer;
   }
 `;

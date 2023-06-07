@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { theme } from "../../../../../../theme";
 import OrderContext from "../../../../../../context/OrderContext";
 import { tabsConfig } from "./tabsConfig";
+import AddForm from "./AddForm";
 
 export default function PanelContent() {
   //state
@@ -13,12 +14,14 @@ export default function PanelContent() {
   //affichage
   return (
     <PanelContentStyled>
-      <p>{tabSelected.label && tabSelected.label}</p>
+      {/*<p>{tabSelected.label && tabSelected.label}</p>*/}
+      {currentTabSelected === "add" && <AddForm />}
     </PanelContentStyled>
   );
 }
 
 const PanelContentStyled = styled.div`
+  position: relative;
   height: 250px;
   background-color: ${theme.colors.white};
   border: 1px solid ${theme.colors.greyLight};

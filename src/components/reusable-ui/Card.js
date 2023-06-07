@@ -1,8 +1,18 @@
 import styled from "styled-components";
 import { theme } from "../../theme";
 import PrimaryButton from "./PrimaryButton";
+import { useContext } from "react";
+import OrderContext from "../../context/OrderContext";
+import { TiDelete } from "react-icons/ti";
 
-export default function Card({ title, imageSource, leftDescription }) {
+export default function Card({
+  title,
+  imageSource,
+  leftDescription,
+  id,
+  onClick,
+}) {
+  const { isModeAdmin } = useContext(OrderContext);
   return (
     <CardStyled>
       <div className="image">
@@ -17,11 +27,17 @@ export default function Card({ title, imageSource, leftDescription }) {
           </div>
         </div>
       </div>
+      {isModeAdmin && (
+        <div className="remove-button" onClick={() => onClick(id)}>
+          <TiDelete className="icon" />
+        </div>
+      )}
     </CardStyled>
   );
 }
 
 const CardStyled = styled.div`
+  position: relative;
   background: ${theme.colors.white};
   width: 200px;
   height: 300px;
@@ -93,6 +109,21 @@ const CardStyled = styled.div`
           padding: 12px;
         }
       }
+    }
+  }
+
+  .remove-button {
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    color: ${theme.colors.primary};
+    :hover {
+      color: ${theme.colors.red};
+    }
+    .icon {
+      height: 20px;
+      width: 20px;
     }
   }
 `;
